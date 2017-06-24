@@ -6,7 +6,7 @@ public class Random {
 		String name="daniell"; //assume user already enter some name
 		
 		//add suffixs to the name user already entered
-		for(int i=0;i<3;i++){
+		for(int i = 0;i<3;i++){
 			int picked = (int) Math.floor(Math.random() * 9);
 			name += suffixs[picked];
 		}
