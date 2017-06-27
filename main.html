@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Name</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>User Name</h1>
+<form action="" method="GET">
+	<div>
+		<input type = "text" name ="username" placeholder = "your name" id="username">
+		<select name="textLength" onchange="hide(this.value)">
+	    	<option>4</option>
+	    	<option>5</option>
+	    	<option>6</option>
+	    	<option>7</option>
+	    	<option selected>8</option>
+	    	<option>9</option>
+	    	<option>10</option>
+	    	<option>11</option>
+	    	<option>12</option>
+	    	<option>13</option>
+	    	<option>14</option>
+	    	<option>15</option>
+	    	<option>16</option>
+	    	<option>17</option>
+	    	<option>18</option>
+	    	<option>19</option>
+	    	<option>20</option>
+    	</select>
+	</div>
+	<div>
+		<input type="checkbox" id="containANumber" checked onclick="setRadioBtn()">
+		<label for="containANumber">Must Contain a Number</label>
+
+		<input type="radio" name="numberPlace" id="prefix">
+		<label for="prefix">prefix</label>
+
+		<input type="radio" id="suffix" name="numberPlace" checked>
+		<label for="prefix">suffix</label>
+	</div>
+	<input type = "button" value = "Submit" onclick = "getBaseString()">
+</form>
+<p><p>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
