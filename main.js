@@ -32,10 +32,10 @@ function getBaseString() {
 	specialChar = getSpecialChar();
 	if(username.value){
 		theName = username.value;
-		if(theName.length > theLength){
-			p.textContent = "too long";
+		if(theName.length + adjustLimit() > theLength){
+			p.textContent = "Your name exceeds the character limit, adjust the character limit so that you can get your longer name.";
 		}
-		else{
+		else {
 			if (containACapital.checked) {
 				theName = capitalizeFirstLetter(theName);
 			}
@@ -95,7 +95,7 @@ function hide(strlength){
 
 //returns a special character
 function getSpecialChar() {
-	var specialCharList = ["!",	"#", "$", "%", "&", "'", "*", "+", "-",	".", ":", "<", "=",	">", "?", "@", "[", "]", "^", "_", "`",	"{", "|", "}", "~"];
+	var specialCharList = ["!",	"#", "$", "%", "&", "'", "*", "+", "-", ":", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`",	"{", "|", "}", "~"];
 	var sNumber = Math.floor(Math.random() * specialCharList.length);
 	return specialCharList[sNumber];
 }
@@ -103,4 +103,19 @@ function getSpecialChar() {
 //capitalizes the first letter of the string
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+//function that helps set character limit
+function adjustLimit() {
+	var limit = 0;
+	if (containANumber.checked) {
+		limit++;
+	} 
+	if (containASpecial.checked) {
+		limit++;
+	}
+	if (limit < 0) {
+		return 0;
+	}
+	return limit;
 }
