@@ -92,6 +92,6 @@ function hide(strlength){
 
 function getSpecialChar() {
 	var specialCharList = ["!",	"#", "$", "%", "&", "'", "*", "+", "-",	".", ":", "<", "=",	">", "?", "@", "[", "]", "^", "_", "`",	"{", "|", "}", "~"];
-	var sNumber = Math.floor(Math.random() * 10);
+	var sNumber = Math.floor(Math.random() * specialCharList.length);
 	return specialCharList[sNumber];
 }
