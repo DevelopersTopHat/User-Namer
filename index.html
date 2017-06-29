@@ -9,7 +9,7 @@
 
 <h1>User Name</h1>
 	<div>
-		<input type = "text" name ="username" placeholder = "your name" id="username">
+		<input type = "text" name ="username" placeholder = "Put name here!" id="username">
 		<select name="textLength" onchange="hide(this.value)">
 		    	<option>4</option>
 		    	<option>5</option>
@@ -31,16 +31,32 @@
     		</select>
 	</div>
 	<div>
-		<input type="checkbox" id="containANumber" checked onclick="setRadioBtn()">
+		<input type="checkbox" id="containANumber">
 		<label for="containANumber">Must Contain a Number</label>
 
 		<input type="radio" name="numberPlace" id="prefix">
 		<label for="prefix">prefix</label>
 
-		<input type="radio" id="suffix" name="numberPlace" checked>
+		<input type="radio" name="numberPlace" id="suffix" checked>
+		<label for="prefix">suffix</label>
+
+	</div>
+
+	<div>
+		<input type="checkbox" id="containASpecial">
+		<label for="containASpecial">Must Contain a Special Character</label>
+
+		<input type="radio" name="specialPlace" id="sprefix">
+		<label for="prefix">prefix</label>
+
+		<input type="radio" name="specialPlace" id="ssuffix" checked>
 		<label for="prefix">suffix</label>
 	</div>
-	<input type = "submit">
+
+	<div>
+		<input type = "submit">
+	</div>
+
 <p><p>
 <script type="text/javascript" src="main.js"></script>
 </body>
