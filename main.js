@@ -36,6 +36,9 @@ function getBaseString() {
 			p.textContent = "too long";
 		}
 		else{
+			if (containACapital.checked) {
+				theName = capitalizeFirstLetter(theName);
+			}
 			if(containANumber.checked){
 				if(suffix.checked){
 					theName += number;
@@ -90,8 +93,14 @@ function hide(strlength){
 	theLength = strlength;
 }
 
+//returns a special character
 function getSpecialChar() {
 	var specialCharList = ["!",	"#", "$", "%", "&", "'", "*", "+", "-",	".", ":", "<", "=",	">", "?", "@", "[", "]", "^", "_", "`",	"{", "|", "}", "~"];
 	var sNumber = Math.floor(Math.random() * specialCharList.length);
 	return specialCharList[sNumber];
+}
+
+//capitalizes the first letter of the string
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

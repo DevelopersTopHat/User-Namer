@@ -9,7 +9,7 @@
 
 <h1>User Name</h1>
 	<div>
-		<input type = "text" name ="username" placeholder = "Put name here!" id="username">
+		<input type = "text" name ="username" placeholder = "(Optional) Put name here!" id="username">
 		<select name="textLength" onchange="hide(this.value)">
 		    	<option>4</option>
 		    	<option>5</option>
@@ -30,6 +30,12 @@
 		    	<option>20</option>
     		</select>
 	</div>
+
+	<div>
+		<input type="checkbox" id="containACapital">
+		<label for="containACapital">Must Contain a Capital Letter</label>
+	</div>
+
 	<div>
 		<input type="checkbox" id="containANumber">
 		<label for="containANumber">Must Contain a Number</label>
