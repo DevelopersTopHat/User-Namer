@@ -7,6 +7,8 @@ var containASpecial = document.getElementById("containASpecial");
 var radioNum = [document.getElementById("prefix"), document.getElementById("suffix")];
 var radioSpecial = [document.getElementById("sprefix"), document.getElementById("ssuffix")];
 
+var nameArray = [];
+
 var number;
 var specialChar;
 
@@ -54,10 +56,12 @@ function getBaseString() {
 					theName = specialChar + theName;
 				}
 			} 
-			p.textContent = "your name is "+theName;
-			console.log("your name is "+theName);
+
+			p.textContent = "Your name is: " + theName;
+			console.log("your name is "+ theName);
 		}
 	}
+
 }
 
 //radio buttons for numbers

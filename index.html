@@ -3,67 +3,77 @@
 <head>
 	<title>User Namer</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="usernamer.css">
 </head>
 <body>
+		<div class="titleBar">
+			<div class="rainbow-text">
+				<div class="title-text">
+				    <span class="letters" id="a1">u</span>
+				    <span class="letters" id="a2">s</span>
+				    <span class="letters" id="a3">e</span>
+				    <span class="letters" id="a4">r</span>
+				    <span class="letters" id="a5">-</span>
+				    <span class="letters" id="a6">n</span>
+				    <span class="letters" id="a7">a</span>
+				    <span class="letters" id="a8">m</span>
+				    <span class="letters" id="a9">e</span>
+				    <span class="letters" id="a10">r</span>
+				</div>
+			</div>
+		</div>
+	<div class="content">
+				<div>
+					<input type = "text" name ="username" placeholder = "(Optional) Put name here!" id="username" class="inputName">
+					<select name="textLength" onchange="hide(this.value)">
+					    	<option>4</option>
+					    	<option>5</option>
+					    	<option>6</option>
+					    	<option>7</option>
+					    	<option selected>8</option>
+					    	<option>9</option>
+					    	<option>10</option>
+					    	<option>11</option>
+					    	<option>12</option>
+					    	<option>13</option>
+					    	<option>14</option>
+					    	<option>15</option>
+					    	<option>16</option>
+					    	<option>17</option>
+					    	<option>18</option>
+					    	<option>19</option>
+					    	<option>20</option>
+			    	</select>
+			    	</div>
+			<div>
+				<br>
+				<input type="checkbox" id="containACapital">
+				<label for="containACapital">Must Contain a Capital Letter</label>
+				<br>
 
-<h1>User Name</h1>
-	<div>
-		<input type = "text" name ="username" placeholder = "(Optional) Put name here!" id="username">
-		<select name="textLength" onchange="hide(this.value)">
-		    	<option>4</option>
-		    	<option>5</option>
-		    	<option>6</option>
-		    	<option>7</option>
-		    	<option selected>8</option>
-		    	<option>9</option>
-		    	<option>10</option>
-		    	<option>11</option>
-		    	<option>12</option>
-		    	<option>13</option>
-		    	<option>14</option>
-		    	<option>15</option>
-		    	<option>16</option>
-		    	<option>17</option>
-		    	<option>18</option>
-		    	<option>19</option>
-		    	<option>20</option>
-    		</select>
+				<input type="checkbox" id="containANumber">
+				<label for="containANumber">Must Contain a Number</label>
+
+				<input type="radio" name="numberPlace" id="prefix">
+				<label for="prefix">prefix</label>
+
+				<input type="radio" name="numberPlace" id="suffix" checked>
+				<label for="prefix">suffix</label>
+				<br>
+
+				<input type="checkbox" id="containASpecial">
+				<label for="containASpecial">Must Contain a Special Character</label>
+
+				<input type="radio" name="specialPlace" id="sprefix">
+				<label for="prefix">prefix</label>
+
+				<input type="radio" name="specialPlace" id="ssuffix" checked>
+				<label for="prefix">suffix</label>
+			</div>
+
+			<input type = "submit">
+			<p></p>
 	</div>
-
-	<div>
-		<input type="checkbox" id="containACapital">
-		<label for="containACapital">Must Contain a Capital Letter</label>
-	</div>
-
-	<div>
-		<input type="checkbox" id="containANumber">
-		<label for="containANumber">Must Contain a Number</label>
-
-		<input type="radio" name="numberPlace" id="prefix">
-		<label for="prefix">prefix</label>
-
-		<input type="radio" name="numberPlace" id="suffix" checked>
-		<label for="prefix">suffix</label>
-
-	</div>
-
-	<div>
-		<input type="checkbox" id="containASpecial">
-		<label for="containASpecial">Must Contain a Special Character</label>
-
-		<input type="radio" name="specialPlace" id="sprefix">
-		<label for="prefix">prefix</label>
-
-		<input type="radio" name="specialPlace" id="ssuffix" checked>
-		<label for="prefix">suffix</label>
-	</div>
-
-	<div>
-		<input type = "submit">
-	</div>
-
-<p><p>
-<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
