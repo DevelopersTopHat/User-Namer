@@ -1,5 +1,6 @@
 var username = document.getElementById("username");
 var p = document.querySelector("p");
+var generatedNames = document.getElementById("generatedNames");
 
 var containANumber = document.getElementById("containANumber");
 var containASpecial = document.getElementById("containASpecial");
@@ -16,7 +17,7 @@ var theName ="";
 var theLength = 8;
 var submit = document.querySelector("input[type='submit']");
 
-submit.addEventListener("click",getBaseString);
+submit.addEventListener("click", getBaseString);
 containANumber.addEventListener("click", setRadioBtn);
 containASpecial.addEventListener("click", setRadioSpecial)
 
@@ -59,6 +60,8 @@ function getBaseString() {
 
 			p.textContent = "Your name is: " + theName;
 			console.log("your name is "+ theName);
+			nameArray.push(theName);
+			displayNames();
 		}
 	}
 
@@ -122,4 +125,17 @@ function adjustLimit() {
 		return 0;
 	}
 	return limit;
+}
+
+function displayNames() {
+	for (var i = 0; i < nameArray.length; i++) {
+		var btn = document.createElement("BUTTON");        // Create a <button> element
+		var t = document.createTextNode(nameArray[i]);     // Create a text node
+		btn.appendChild(t);                                // Append the text to <button>
+		document.getElementById("generatedNames").appendChild(btn);
+		var br = document.createElement("br");
+        document.getElementById("generatedNames").appendChild(br);
+        nameArray.pop();
+	}   
+
 }
