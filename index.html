@@ -25,8 +25,8 @@
 		</div>
 	<div class="content">
 				<div id="inputNamer">
-					<input type = "text" name ="username" placeholder = "(Optional) Put name here!" id="username" class="inputName">
-					<select name="textLength" onchange="hide(this.value)">
+					<input type = "text" name ="username" placeholder = "(Optional) Put name here!" id="username" class="inputName" maxlength="10">
+					<select name="textLength" onchange="updateCharLimit(this.value)" id="selectedLimit">
 					    	<option>4</option>
 					    	<option>5</option>
 					    	<option>6</option>
@@ -36,14 +36,6 @@
 					    	<option>10</option>
 					    	<option>11</option>
 					    	<option>12</option>
-					    	<option>13</option>
-					    	<option>14</option>
-					    	<option>15</option>
-					    	<option>16</option>
-					    	<option>17</option>
-					    	<option>18</option>
-					    	<option>19</option>
-					    	<option>20</option>
 			    	</select>
 			    </div>
 			<div>
@@ -52,7 +44,7 @@
 				<label for="containACapital">Must Contain a Capital Letter</label>
 				<br>
 
-				<input type="checkbox" id="containANumber">
+				<input type="checkbox" id="containANumber" onclick="adjustLimit()">
 				<label for="containANumber">Must Contain a Number</label>
 
 				<input type="radio" name="numberPlace" id="prefix">
@@ -62,7 +54,7 @@
 				<label for="prefix">suffix</label>
 				<br>
 
-				<input type="checkbox" id="containASpecial">
+				<input type="checkbox" id="containASpecial"onclick="adjustLimit()">
 				<label for="containASpecial">Must Contain a Special Character</label>
 
 				<input type="radio" name="specialPlace" id="sprefix">
@@ -72,15 +64,14 @@
 				<label for="prefix">suffix</label>
 			</div>
 
-			<input type = "submit" name="Submit!">
-			<p></p>
+			<input type = "submit" name="Submit!" class=".btn-style" onclick="getBaseString()">
+			<p id="displayName"></p>
 
 			<div id="generatedNames"></div>
 			<div id="list"></div>
 
 	</div>
-	<script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
-	<script type="text/javascript" src="main.js"></script>
-    	<script src="js/clipboard.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+	<script type="text/javascript" src="usernamer.js"></script>
 </body>
 </html>
