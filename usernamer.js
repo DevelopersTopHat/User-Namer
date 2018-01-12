@@ -5,6 +5,7 @@ var limitAdjuster = 0;
 var listName = "";
 var displayName = document.getElementById("displayName");
 var selectedLimit = document.getElementById("selectedLimit");
+var generatedNames = document.getElementById("generatedNames");
 
 var containANumber = document.getElementById("containANumber");
 var containASpecial = document.getElementById("containASpecial");
@@ -46,6 +47,7 @@ function getBaseString() {
 			baseString += getRandomWord(); 
 			baseString = addAdditionalAppendage(baseString);
 			displayName.textContent = "Your name is: " + baseString;
+			copyButton(baseString);
 			console.log("The final output is: " + baseString);
 		}
 		else {
@@ -66,7 +68,37 @@ function getBaseString() {
 		}
 		baseString = addAdditionalAppendage(baseString);
 		displayName.textContent = "Your name is: " + baseString;
+		copyButton(baseString);
+
 	}
+}
+
+//creates a button that onclick copies the text on the button to the clipboard
+function copyButton(baseString) {
+	var copyName = document.createElement("button");
+	copyName.innerText = baseString;
+	copyName.id = baseString;
+
+	copyName.onclick = function() {
+
+		if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(copyName.id));
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(copyName.id));
+            window.getSelection().empty();
+            window.getSelection().addRange(range);
+        }
+
+  		document.execCommand('copy');
+  		window.getSelection().empty();
+  		alert("Copied the text: " + baseString);
+  	};
+
+	generatedNames.appendChild(copyName);
+	//console.log(baseString);
 }
 
 function updateCharLimit(newLimit) {
@@ -79,6 +111,11 @@ function updateCharLimit(newLimit) {
 
 function adjustLimit() {
 	limitAdjuster = 0;
+	if(document.getElementById("username").value.length > 0) {
+		limitAdjuster += document.getElementById("username").value.length;
+		determineListName();	
+		generateBaseLists();
+	}
 	if(containANumber.checked) {
 		limitAdjuster++;
 		determineListName();
@@ -89,7 +126,6 @@ function adjustLimit() {
 		limitAdjuster++;
 		determineListName();	
 		generateBaseLists();
-
 	}
 }
 
@@ -184,7 +220,7 @@ function getRandomWord() {
 			console.log("The random word is: " + list10[Math.floor(Math.random() * list10.length)]);
 			return list10[Math.floor(Math.random() * list10.length)];
 		}
-		return "Lets do each other a favour and either choose more name options, or lower the character limit. Lets just say it'll keep the 'bugs' in their cage.";
+		return " Lets do each other a favour and change the character limit. Lets just say it'll keep the 'bugs' in their cage.";
 }
 
 window.onload = function() {
