@@ -129,7 +129,7 @@
 /* Title CSS End*/
 
 .inputName {
-  width: 700px;
+  width: 100%;
 
 }
 
@@ -145,7 +145,7 @@
 body {
   background: rgb(169, 3, 41);
 }
-
+/*
 .myButton {
 	-moz-box-shadow: 0px 1px 0px 0px #fff6af;
 	-webkit-box-shadow: 0px 1px 0px 0px #fff6af;
@@ -187,12 +187,11 @@ body {
 	top:1px;
 }
 
-
+*/
 
 
 
 input[type=text], select {
-    width: 700px, 0;
     padding: 12px 20px;
     margin: 8px;
     display: inline-block;
@@ -200,15 +199,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-/*
-select {
-    width: 10%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}*/
+
 
 .btn-style{
   border : solid 1px #000000;
